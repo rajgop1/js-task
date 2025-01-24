@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Array Methods Tasks</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    .task {
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background: #f9f9f9;
+    }
+    pre {
+      background: #eee;
+      padding: 10px;
+      border-radius: 5px;
+      overflow: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>JavaScript Array Methods Tasks</h1>
+  <p>Complete the tasks below by writing JavaScript code. Use the sample arrays provided for each task.</p>
+
+  <!-- Task 1: Iteration and Transformation -->
+  <div class="task">
+    <h2>Task 1: Iteration and Transformation</h2>
+    <pre>
+      Sample Array: [1, 2, 3, 4]
+      1. map(): Result should look like [2, 4, 6, 8]
+      2. forEach(): Each name should be logged individually (e.g., "Alice", "Bob", "Charlie")
+      3. filter(): Result should look like [6, 7, 8]
+      4. reduce(): Result should look like 10
+      5. find(): Result should look like { id: 1, name: "John" }
+      6. findIndex(): Result should look like 2
+      7. some(): Result should look like true/false
+      8. every(): Result should look like true/false
+    </pre>
+  </div>
+
+  <!-- Task 2: Adding and Removing Elements -->
+  <div class="task">
+    <h2>Task 2: Adding and Removing Elements</h2>
+    <pre>
+      Sample Array: [1, 2, 3]
+      1. push(): Array should look like [1, 2, 3, 4]
+      2. pop(): Removed value should be 4, array should look like [1, 2, 3]
+      3. unshift(): Array should look like [0, 1, 2, 3]
+      4. shift(): Removed value should be 0, array should look like [1, 2, 3]
+      5. splice(): Array should look like [1, 4, 5] after removing and [1, 2, 3, 4, 5] after inserting
+      6. slice(): Result should look like [1, 2, 3]
+    </pre>
+  </div>
+
+  <!-- Task 3: Searching and Sorting -->
+  <div class="task">
+    <h2>Task 3: Searching and Sorting</h2>
+    <pre>
+      Sample Array: [4, 3, 2, 1]
+      1. indexOf(): Result should look like 1
+      2. lastIndexOf(): Result should look like 3
+      3. includes(): Result should look like true/false
+      4. sort(): Result should look like [1, 2, 3, 4]
+      5. reverse(): Result should look like [4, 3, 2, 1]
+    </pre>
+  </div>
+
+  <!-- Task 4: Joining and Splitting -->
+  <div class="task">
+    <h2>Task 4: Joining and Splitting</h2>
+    <pre>
+      Sample Array: ["Hello", "world"]
+      1. join(): Result should look like "Hello world"
+      2. concat(): Result should look like [1, 2, 3, 4, 5, 6]
+    </pre>
+  </div>
+
+  <!-- Task 5: Flattening and Mapping -->
+  <div class="task">
+    <h2>Task 5: Flattening and Mapping</h2>
+    <pre>
+      Sample Array: [1, [2, [3, 4]], 5]
+      1. flat(): Result should look like [1, 2, [3, 4], 5] or [1, 2, 3, 4, 5]
+      Sample Array: ["Hello"]
+      2. flatMap(): Result should look like ['H', 'e', 'l', 'l', 'o']
+    </pre>
+  </div>
+
+  <!-- Task 6: Utility Methods -->
+  <div class="task">
+    <h2>Task 6: Utility Methods</h2>
+    <pre>
+      Sample Array: [1, 2, 3]
+      1. Array.isArray(): Result should look like true/false
+      Sample String: "Hello"
+      2. Array.from(): Result should look like ['H', 'e', 'l', 'l', 'o']
+      3. Array.of(): Result should look like [1, 2, 3]
+    </pre>
+  </div>
+
+  <script>
+    // Task 1: Iteration and Transformation
+    const numbers = [1, 2, 3, 4];
+    const names = ["Alice", "Bob", "Charlie"];
+    const items = [
+      { id: 1, name: "John" },
+      { id: 2, name: "Doe" },
+    ];
+
+    // Task 2: Adding and Removing Elements
+    const addRemoveArray = [1, 2, 3];
+
+    // Task 3: Searching and Sorting
+    const searchSortArray = [4, 3, 2, 1];
+
+    // Task 4: Joining and Splitting
+    const joinSplitArray = ["Hello", "world"];
+    const concatArray1 = [1, 2, 3];
+    const concatArray2 = [4, 5, 6];
+
+    // Task 5: Flattening and Mapping
+    const nestedArray = [1, [2, [3, 4]], 5];
+    const helloString = ["Hello"];
+
+    // Task 6: Utility Methods
+    const utilArray = [1, 2, 3];
+    const utilString = "Hello";
+  </script>
+</body>
+</html>
