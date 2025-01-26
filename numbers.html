@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Object Methods Task</title>
+</head>
+<body>
+    <h1>Math Object Methods Task</h1>
+
+    <div>
+        <h2>1. Round a number using `Math.round()`</h2>
+        <input type="number" id="roundNumber" placeholder="Enter a number" />
+        <button onclick="roundNumber()">Round Number</button>
+        <p>Expected output: Rounded number</p>
+    </div>
+
+    <div>
+        <h2>2. Round a number down using `Math.floor()`</h2>
+        <input type="number" id="floorNumber" placeholder="Enter a number" />
+        <button onclick="floorNumber()">Floor Number</button>
+        <p>Expected output: Rounded down number</p>
+    </div>
+
+    <div>
+        <h2>3. Round a number up using `Math.ceil()`</h2>
+        <input type="number" id="ceilNumber" placeholder="Enter a number" />
+        <button onclick="ceilNumber()">Ceil Number</button>
+        <p>Expected output: Rounded up number</p>
+    </div>
+
+    <div>
+        <h2>4. Find the largest number using `Math.max()`</h2>
+        <input type="text" id="maxNumbers" placeholder="Enter numbers separated by commas" />
+        <button onclick="findMax()">Find Max</button>
+        <p>Expected output: Largest number</p>
+    </div>
+
+    <div>
+        <h2>5. Find the smallest number using `Math.min()`</h2>
+        <input type="text" id="minNumbers" placeholder="Enter numbers separated by commas" />
+        <button onclick="findMin()">Find Min</button>
+        <p>Expected output: Smallest number</p>
+    </div>
+
+    <div>
+        <h2>6. Calculate the square root of a number using `Math.sqrt()`</h2>
+        <input type="number" id="sqrtNumber" placeholder="Enter a number" />
+        <button onclick="calculateSqrt()">Calculate Square Root</button>
+        <p>Expected output: Square root of the number</p>
+    </div>
+
+    <div>
+        <h2>7. Generate a random number using `Math.random()`</h2>
+        <button onclick="generateRandom()">Generate Random</button>
+        <p>Expected output: Random number between 0 and 1</p>
+    </div>
+
+    <div>
+        <h2>8. Find the power of a number using `Math.pow()`</h2>
+        <input type="number" id="base" placeholder="Enter base" />
+        <input type="number" id="exponent" placeholder="Enter exponent" />
+        <button onclick="calculatePower()">Calculate Power</button>
+        <p>Expected output: Result of base raised to the exponent</p>
+    </div>
+
+    <div>
+        <h2>9. Find the absolute value of a number using `Math.abs()`</h2>
+        <input type="number" id="absNumber" placeholder="Enter a number" />
+        <button onclick="calculateAbs()">Calculate Absolute Value</button>
+        <p>Expected output: Absolute value of the number</p>
+    </div>
+
+    <div>
+        <h2>10. Calculate the sine of an angle using `Math.sin()`</h2>
+        <input type="number" id="angle" placeholder="Enter angle in radians" />
+        <button onclick="calculateSine()">Calculate Sine</button>
+        <p>Expected output: Sine of the angle</p>
+    </div>
+
+    <script>
+        // 1. Round a number using Math.round()
+        function roundNumber() {
+            const num = parseFloat(document.getElementById("roundNumber").value);
+            // Implement rounding and display the result
+            // Expected output: Rounded number
+        }
+
+        // 2. Round a number down using Math.floor()
+        function floorNumber() {
+            const num = parseFloat(document.getElementById("floorNumber").value);
+            // Implement rounding down and display the result
+            // Expected output: Rounded down number
+        }
+
+        // 3. Round a number up using Math.ceil()
+        function ceilNumber() {
+            const num = parseFloat(document.getElementById("ceilNumber").value);
+            // Implement rounding up and display the result
+            // Expected output: Rounded up number
+        }
+
+        // 4. Find the largest number using Math.max()
+        function findMax() {
+            const numbers = document.getElementById("maxNumbers").value.split(',').map(Number);
+            // Implement logic to find the largest number
+            // Expected output: Largest number
+        }
+
+        // 5. Find the smallest number using Math.min()
+        function findMin() {
+            const numbers = document.getElementById("minNumbers").value.split(',').map(Number);
+            // Implement logic to find the smallest number
+            // Expected output: Smallest number
+        }
+
+        // 6. Calculate the square root of a number using Math.sqrt()
+        function calculateSqrt() {
+            const num = parseFloat(document.getElementById("sqrtNumber").value);
+            // Implement logic to find the square root
+            // Expected output: Square root of the number
+        }
+
+        // 7. Generate a random number using Math.random()
+        function generateRandom() {
+            // Implement logic to generate a random number
+            // Expected output: Random number between 0 and 1
+        }
+
+        // 8. Find the power of a number using Math.pow()
+        function calculatePower() {
+            const base = parseFloat(document.getElementById("base").value);
+            const exponent = parseFloat(document.getElementById("exponent").value);
+            // Implement logic to calculate the power
+            // Expected output: Result of base raised to the exponent
+        }
+
+        // 9. Find the absolute value of a number using Math.abs()
+        function calculateAbs() {
+            const num = parseFloat(document.getElementById("absNumber").value);
+            // Implement logic to calculate absolute value
+            // Expected output: Absolute value of the number
+        }
+
+        // 10. Calculate the sine of an angle using Math.sin()
+        function calculateSine() {
+            const angle = parseFloat(document.getElementById("angle").value);
+            // Implement logic to calculate the sine of the angle
+            // Expected output: Sine of the angle
+        }
+    </script>
+</body>
+</html>
