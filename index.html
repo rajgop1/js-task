@@ -116,6 +116,57 @@
       { id: 1, name: "John" },
       { id: 2, name: "Doe" },
     ];
+    function multiplyby2(z){
+      return z * 2;
+    }
+    let numbers2 = numbers.map(multiplyby2)
+    console.log("Q1.1  " , numbers2);
+    console.log("Q1.2  ")
+    function foreachone(x){
+      console.log (x)
+    }
+    numbers.forEach(foreachone)
+    
+   
+    function logindividual(x){
+     
+      console.log(x)
+    }
+   let numbers3 = numbers.filter((looklike) => {
+    return looklike > 1
+   })
+    let numbers4 = numbers3.map((mapi)=>{
+      return mapi , 4
+    }
+  )
+  console.log("Q1.3  "+numbers4)
+  let number5 = numbers.reduce((total,reduce) => {
+    return total + reduce},0
+  )
+   console.log("Q1.4  ",number5)
+   let item1 = items.find((item) =>{
+    return item.name === 'John'
+   })
+   console.log("Q1.5   ", item1)
+
+
+   let number6 = numbers.findIndex((myindex)=>{
+    return myindex === 3
+   })
+   console.log("Q.6  ",number6)
+
+
+   let myresult = numbers.some((apoorva)=>{
+    return  apoorva  === 2
+   })
+    console.log("Q1.7  ",myresult)
+
+
+    
+   let mylastresult = names.every((apoorva)=>{
+    return  apoorva  === 'Alice'
+   })
+    console.log("Q1.8  ",mylastresult)
 
     // Task 2: Adding and Removing Elements
     const addRemoveArray = [1, 2, 3];
