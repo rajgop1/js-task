@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript String Methods Tasks</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    .task {
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background: #f9f9f9;
+    }
+    pre {
+      background: #eee;
+      padding: 10px;
+      border-radius: 5px;
+      overflow: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>JavaScript String Methods Tasks</h1>
+  <p>Complete the tasks below by writing JavaScript code. Use the sample strings provided for each task.</p>
+
+  <!-- Task 1: String Transformation -->
+  <div class="task">
+    <h2>Task 1: String Transformation</h2>
+    <p>Use string methods to transform the string. The following methods need to be applied:</p>
+    <pre>
+      // Sample String: "hello world"
+      
+      // 1. toUpperCase() - Converts the string to uppercase.
+      // Expected Output: "HELLO WORLD"
+
+      // 2. toLowerCase() - Converts the string to lowercase.
+      // Expected Output: "hello world"
+
+      // 3. charAt() - Returns the character at the specified index.
+      // Expected Output: 'h' (The character at index 0)
+
+      // 4. concat() - Concatenates the given string(s) to the original string.
+      // Expected Output: "hello world! How are you?"
+
+      // 5. replace() - Replaces part of the string with another string.
+      // Expected Output: "Hello everyone"
+
+      // 6. trim() - Removes whitespace from both ends of the string.
+      // Expected Output: "Hello world"
+    </pre>
+    <script>
+      // Complete the task by writing your JavaScript code below
+      
+      let str = "hello world";
+
+      // Write your code here
+    </script>
+  </div>
+
+  <!-- Task 2: String Searching -->
+  <div class="task">
+    <h2>Task 2: String Searching</h2>
+    <p>Search for specific substrings or characters in the string:</p>
+    <pre>
+      // Sample String: "JavaScript is awesome"
+      
+      // 1. indexOf() - Finds the index of the first occurrence of a substring.
+      // Expected Output: 0 (Index of "JavaScript")
+
+      // 2. lastIndexOf() - Finds the index of the last occurrence of a substring.
+      // Expected Output: 5 (Index of "is")
+
+      // 3. includes() - Checks if a substring exists in the string.
+      // Expected Output: true
+
+      // 4. startsWith() - Checks if the string starts with the specified substring.
+      // Expected Output: true
+
+      // 5. endsWith() - Checks if the string ends with the specified substring.
+      // Expected Output: true
+    </pre>
+    <script>
+      // Complete the task by writing your JavaScript code below
+      
+      let searchStr = "JavaScript is awesome";
+
+      // Write your code here
+    </script>
+  </div>
+
+  <!-- Task 3: String Manipulation -->
+  <div class="task">
+    <h2>Task 3: String Manipulation</h2>
+    <p>Use the string methods for manipulation and slicing:</p>
+    <pre>
+      // Sample String: "Hello, world!"
+      
+      // 1. slice() - Extracts a section of the string.
+      // Expected Output: "world!"
+
+      // 2. substring() - Extracts part of the string between two specified indices.
+      // Expected Output: "Hello"
+
+      // 3. split() - Splits the string into an array of substrings.
+      // Expected Output: ["Hello", "world!"]
+
+      // 4. repeat() - Repeats the string a specified number of times.
+      // Expected Output: "Hello, world!Hello, world!"
+
+      // 5. padStart() - Pads the string from the start to meet the specified length.
+      // Expected Output: "****Hello, world!"
+
+      // 6. padEnd() - Pads the string from the end to meet the specified length.
+      // Expected Output: "Hello, world!****"
+    </pre>
+    <script>
+      // Complete the task by writing your JavaScript code below
+      
+      let manipulateStr = "Hello, world!";
+
+      // Write your code here
+    </script>
+  </div>
+
+  <!-- Task 4: String Conversion -->
+  <div class="task">
+    <h2>Task 4: String Conversion</h2>
+    <p>Convert values to strings using different methods:</p>
+    <pre>
+      // Sample Value: 12345
+      
+      // 1. String() - Converts the number to a string.
+      // Expected Output: "12345"
+
+      // 2. toString() - Converts the number to a string.
+      // Expected Output: "12345"
+    </pre>
+    <script>
+      // Complete the task by writing your JavaScript code below
+      
+      let num = 12345;
+
+      // Write your code here
+    </script>
+  </div>
+
+  <!-- Task 5: String Template Literals -->
+  <div class="task">
+    <h2>Task 5: String Template Literals</h2>
+    <p>Use template literals to combine variables and strings:</p>
+    <pre>
+      // Sample Values: name = "Alice", age = 25
+      
+      // 1. Template literal - Combine variables and string into one string.
+      // Expected Output: "My name is Alice and I am 25 years old."
+    </pre>
+    <script>
+      // Complete the task by writing your JavaScript code below
+      
+      let name = "Alice";
+      let age = 25;
+
+      // Write your code here
+    </script>
+  </div>
+
+  <!-- Task 6: Utility Methods -->
+  <div class="task">
+    <h2>Task 6: Utility Methods</h2>
+    <p>Use utility methods to manipulate the string and check its content:</p>
+    <pre>
+      // Sample String: "   Hello   "
+      
+      // 1. startsWith() - Checks if the string starts with the specified substring.
+      // Expected Output: true
+
+      // 2. endsWith() - Checks if the string ends with the specified substring.
+      // Expected Output: true
+
+      // 3. includes() - Checks if the string contains the specified substring.
+      // Expected Output: true
+
+      // 4. trimStart() - Removes whitespace from the beginning of the string.
+      // Expected Output: "Hello   "
+
+      // 5. trimEnd() - Removes whitespace from the end of the string.
+      // Expected Output: "   Hello"
+    </pre>
+    <script>
+      // Complete the task by writing your JavaScript code below
+      
+      let utilityStr = "   Hello   ";
+
+      // Write your code here
+    </script>
+  </div>
+
+</body>
+</html>
