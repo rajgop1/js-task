@@ -246,11 +246,34 @@
 
     // Task 5: Flattening and Mapping
     const nestedArray = [1, [2, [3, 4]], 5];
-    const helloString = ["Hello"];
+    const helloString = ["Hello","Apoorva"];
 
+    let flate = nestedArray.flat(2)
+    console.log("Q5.1   ",flate)
+
+
+   
+  
+
+   let flatee = helloString.flatMap((x)=>{
+    return x.split('')
+   })
+   console.log("Q5.2   ",flatee)
+    
     // Task 6: Utility Methods
     const utilArray = [1, 2, 3];
     const utilString = "Hello";
+
+
+   console.log("Q6.1   ",Array.isArray(utilString))
+   console.log("      ",Array.isArray(utilArray))
+   
+   let helloo = Array.from(utilString)
+   console.log("Q6.2   ",helloo)
+
+
+   let finallylast = Array.of(1,2,3)
+   console.log("Q6.3    ",finallylast)
   </script>
 </body>
 </html>
