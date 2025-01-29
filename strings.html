@@ -63,6 +63,22 @@
       let str = "hello world";
 
       // Write your code here
+      let srr = str.toUpperCase();
+      console.log("Q1.1   ",srr);
+
+      console.log("Q1.2   ",srr.toLowerCase());
+
+      console.log("Q1.3   ",str.charAt(0));
+
+      let str2 = str.concat("! How are you?");
+      console.log("Q1.4    ",str2);
+
+      let str3 = str.replace("world!","everyone");
+      console.log("Q1.5   ",str3);
+
+      let me = " hello everyone "
+      console.log("Q1.6   ",me.trim())
+
     </script>
   </div>
 
@@ -94,7 +110,27 @@
       let searchStr = "JavaScript is awesome";
 
       // Write your code here
-    </script>
+      let index_of = searchStr.indexOf("a")
+      let indices_of = searchStr.indexOf("is")
+      console.log("Q2.1    ",index_of)
+      console.log("         ",indices_of)
+
+
+
+      let last_index = searchStr.lastIndexOf("a")
+      console.log("Q2.2    ",last_index)
+
+
+
+      console.log("Q2.3   ",searchStr.includes("Java"))
+
+
+
+      console.log("Q2.4   ",searchStr.startsWith("Script"))
+
+
+      console.log("Q2.5   ",searchStr.endsWith("some"))
+    </script>  
   </div>
 
   <!-- Task 3: String Manipulation -->
@@ -128,6 +164,19 @@
       let manipulateStr = "Hello, world!";
 
       // Write your code here
+
+        console.log("Q3.1   ",manipulateStr.slice("world!"))
+        console.log("Q3.2   ",manipulateStr.substring(0,5))
+        console.log("Q3.3   ",manipulateStr.split(","))
+        console.log("       ",manipulateStr.split(""))
+        console.log("Q3.4   ",manipulateStr.repeat(3))
+        console.log("Q3.5   ",manipulateStr.padStart(25))
+        console.log("Q3.6   ",manipulateStr.padEnd(30))
+
+
+        
+
+
     </script>
   </div>
 
@@ -150,6 +199,14 @@
       let num = 12345;
 
       // Write your code here
+
+      console.log("       ",typeof(num))
+      let strn1 = String(num)
+      
+      console.log("Q4.1    ",strn1,typeof(strn1))
+
+      let object_ = [1,2,3,4,5]
+      console.log("Q4.2   ",object_.toString(),typeof(object_.toString()))
     </script>
   </div>
 
@@ -165,11 +222,19 @@
     </pre>
     <script>
       // Complete the task by writing your JavaScript code below
+
+
+     
       
       let name = "Alice";
       let age = 25;
 
       // Write your code here
+
+
+      let template_l = `My name is ${name}, and I am ${age}, years old.`
+      console.log("Q5    ",template_l)
+
     </script>
   </div>
 
@@ -201,6 +266,20 @@
       let utilityStr = "   Hello   ";
 
       // Write your code here
+
+      console.log("Q6.1    ",utilityStr.startsWith("hi"))
+
+
+      console.log("Q6.2    ",utilityStr.endsWith("  "))
+
+
+      console.log("Q6.3    ",utilityStr.includes("elo"))
+
+
+      console.log("Q6.4    ",utilityStr.trimStart())
+
+
+      console.log("Q6.5    ",utilityStr.trimEnd())
     </script>
   </div>
 
