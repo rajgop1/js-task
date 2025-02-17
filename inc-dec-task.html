@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100%;
+        }
+        .flex{
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex">
+        <button id="decButton">-</button>
+        <div id="value">counter</div>
+        <button id="incButton">+</button>
+    </div>
+    <script>
+        // accessing the buttons and putting them in var
+        let decButton =  document.querySelector("#decButton")
+        let incButton =  document.querySelector("#incButton")
+        let value = document.querySelector("#value")
+        // addign eventlistener to the var
+        value.textContent = localStorage.getItem("lastval")
+        if(localStorage.getItem("lastval")== null){
+            value.textContent = 0
+        }
+        decButton.addEventListener("click",function(data){
+            let divValue = Number(value.textContent)
+            value.textContent = divValue - 1
+            localStorage.setItem("lastval",value.textContent)
+        })
+        incButton.addEventListener("click",function(data){
+            let divValue = Number(value.textContent)
+            value.textContent = divValue + 1
+            localStorage.setItem("lastval",value.textContent)            
+        })
+        // adding a funcition of increasing and decreasing the value of div in the eventlistener
+    </script>
+</body>
+</html>
