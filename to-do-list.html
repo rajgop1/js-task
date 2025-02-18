@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to-do-list</title>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+    body{
+        background-color: rgb(255, 245, 220);
+    }
+    #task{
+        width: 400px;
+        margin-inline: auto;
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+        box-shadow: 0 0 10px rgb(186, 67, 190);
+        border-radius: 15px;
+        background-color: rgb(171, 114, 166);
+        height: 100%;
+        
+    }
+    h1{
+        margin: 20px 0px;
+        text-align: center;
+        color: rgb(220, 195, 98);
+        font-size: 35px;
+        text-shadow: 1px 1px 5px white;
+    }
+    #input{
+        width: 350px;
+        margin-inline: auto;
+        background-color: white;
+        padding-left: 5px;
+        box-shadow: 0 0 5px rgb(157, 178, 195);
+        border: none;
+        height: 30px;
+        border-radius: 5px;
+    }
+    
+    button{
+        text-align: center;
+        background-color: rgb(253, 255, 253);
+        color: rgb(220, 37, 190);
+        width: 100px;
+        margin-inline: auto;
+        margin-top: 20px;
+        height: 40px;
+        border-radius: 10px;
+        border: none;
+        font-size: 15px;
+        font: bold;
+        margin-bottom: 20px;
+    }
+    #tasklist{
+        margin-inline: center;
+        padding: 0px;
+
+    }
+    .adddedTask{
+        line-height: 30px;
+
+    }
+    .list{
+        background-color: white;
+        margin-inline: center;
+        margin: 0px 10px;
+        border-radius: 5px;
+        padding: 5px;
+        margin-bottom: 5px;
+        overflow: auto;
+        box-shadow: 0 0 10px pink;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+    .scheduleHeading{
+        text-align: center;
+    }
+    .cancel{
+        background-color: red;
+        color: whitesmoke;
+        text-align: center;
+        width: 20px;
+        height: 20px;
+
+    }
+    
+</style>
+<body>
+    <div id="task">
+        <h1>To-Do-List</h1>
+        <input id="input" type="tex" placeholder="Enter task."></input>
+        <button id="button">ADD TASK</button>
+        <div id="head"></div>
+        <ul id="tasklist">
+        </ul>
+    </div>
+    
+</body>
+<script>
+    let num = 0
+    const heading = document.getElementById("head")
+    const task = document.getElementById("task")
+    let tasklist = document.getElementById("tasklist")
+    let inputedtask = document.getElementById("input")
+    let button = document.getElementById("button")
+    button.addEventListener("click", head,{once:"ture"})
+    button.addEventListener("click", historyy)
+    button.addEventListener("click",add)
+    function head(){
+        let tagline = document.createElement("h2")
+        tagline.classList.add("scheduleHeading")
+        heading.append(tagline)
+        tagline.textContent = "Here comes your schedule-"
+    }
+    function historyy(){
+        
+        while((num >= 0) && (localStorage.getItem(num.toString())!=null)){
+            let addedRow = document.createElement("div")
+            tasklist.append(addedRow)
+            let addedTask = document.createElement("p")
+            addedTask.classList.add("addedTask")
+            addedRow.append(addedTask)
+            let cancelButton = document.createElement("cancelButton")
+            addedRow.append(cancelButton)
+            cancelButton.textContent = "x"
+            cancelButton.classList.add("cancel")
+            addedRow.classList.add("list")
+            addedTask.textContent = localStorage.getItem(num.toString())
+            num++
+        }
+    }
+    function add (){
+        if(inputedtask.value != ''){
+            let addedRow = document.createElement("div")
+            tasklist.append(addedRow)
+            let addedTask = document.createElement("p")
+            addedTask.classList.add("addedTask")
+            addedRow.append(addedTask)
+            let cancelButton = document.createElement("cancelButton")
+            addedRow.append(cancelButton)
+            cancelButton.textContent = "x"
+            cancelButton.classList.add("cancel")
+            addedRow.classList.add("list")
+            addedTask.textContent = inputedtask.value
+            localStorage.setItem(num.toString(), inputedtask.value)
+            console.log(num)
+            console.log(localStorage.getItem(num.toString()))
+            num++
+            inputedtask.value = ''
+            
+        }
+    }
+</script>
+</html>
