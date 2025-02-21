@@ -136,10 +136,14 @@
             addedRow.classList.add("list")
             addedTask.textContent = localStorage.getItem(num.toString())
             cancelButton.addEventListener("click",()=>{
-                localStorage.removeItem(num.toString())
+                let value = 0
+                while(value < num){
+                    if(localStorage.getItem(value.toString())=== addedTask.textContent){
+                        localStorage.removeItem(value.toString())
+                    }
+                    value = value + 1
+                }
                 addedRow.style.display = "none"
-                console.log(num)
-
             })
             num++
         }
@@ -162,7 +166,6 @@
             cancelButton.addEventListener("click",()=>{
                 localStorage.removeItem(num.toString())
                 addedRow.style.display = "none"
-                console.log(num)
 
             })
             num++
