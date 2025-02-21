@@ -132,11 +132,13 @@
             addedRow.append(cancelButton)
             cancelButton.textContent = "x"
             cancelButton.classList.add("cancel")
+            cancelButton.classList.add(num.toString())
             addedRow.classList.add("list")
             addedTask.textContent = localStorage.getItem(num.toString())
             cancelButton.addEventListener("click",()=>{
                 localStorage.removeItem(num.toString())
                 addedRow.style.display = "none"
+                console.log(num)
 
             })
             num++
@@ -156,12 +158,12 @@
             addedRow.classList.add("list")
             addedTask.textContent = inputedtask.value
             localStorage.setItem(num.toString(), inputedtask.value)
-            console.log(num)
-            console.log(localStorage.getItem(num.toString()))
             inputedtask.value = ''
             cancelButton.addEventListener("click",()=>{
                 localStorage.removeItem(num.toString())
                 addedRow.style.display = "none"
+                console.log(num)
+
             })
             num++
         }
