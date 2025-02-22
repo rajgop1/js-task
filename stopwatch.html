@@ -86,26 +86,25 @@
     function apoorva() {
         let start = setInterval(function starting() {
             let digit = parseInt(secondDIv.textContent)
-            if (digit < 60) {
+            if (digit < 59) {
                 digit++
                 secondDIv.textContent = digit
             }
             else {
                 secondDIv.textContent = 0
                 let digit2 = minuteDIv.textContent
-                if (digit2 < 60) {
+                if (digit2 < 59) {
                     digit2++
                     minuteDIv.textContent = digit2
                 }
                 else {
-                    digit2 = 0
+                    minuteDIv.textContent = 0
                     let digit3 = hourDIv.textContent
                     if (digit3 < 24) {
                         digit3++
                         hourDIv.textContent = digit3
                     }
                     else {
-                        secondDIv.textContent = 0
                         location.reload()
                     }
                 }
@@ -114,7 +113,6 @@
             , 1000)
         pauseBtn.addEventListener("click", () => {
             clearInterval(start)
-            console.log("hi")
         }
         )
     }
