@@ -111,8 +111,8 @@
     let tasklist = document.getElementById("tasklist")
     let inputedtask = document.getElementById("input")
     let button = document.getElementById("button")
-    button.addEventListener("click", head,{once:"ture"})
-    button.addEventListener("click", historyy)
+    button.addEventListener("click", head,{once:"true"})
+    historyy()
     button.addEventListener("click",add)
     function head(){
         let tagline = document.createElement("h2")
@@ -143,7 +143,7 @@
                     }
                     value = value + 1
                 }
-                addedRow.style.display = "none"
+                addedRow.remove()
             })
             num++
         }
@@ -165,7 +165,7 @@
             inputedtask.value = ''
             cancelButton.addEventListener("click",()=>{
                 localStorage.removeItem(num.toString())
-                addedRow.style.display = "none"
+                addedRow.remove()
 
             })
             num++

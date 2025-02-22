@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stopwatch</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: green;
+        }
+
+        #stopwatch {
+            margin-inline: auto;
+            width: 300px;
+            margin-top: 100px;
+        }
+
+        #time-period {
+            margin: 30px 0px 0px 0px;
+            gap: 30px;
+            margin-inline: auto;
+            width: fit-content;
+            box-shadow: 0 0 5px gray;
+            padding: 5px 5px;
+
+
+        }
+
+        #buttons-container {
+            gap: 30px;
+            margin-inline: auto;
+            padding: 30px 0;
+
+        }
+
+        .btn {
+            width: 50px;
+            padding: 5px 10px 10px 10px;
+            height: 30px;
+        }
+
+        .time {
+            background-color: rgb(220, 197, 181);
+            width: 30px;
+            text-align: center;
+            font-size: 25px;
+            font: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="stopwatch" class="bg-pink-200 w-1/4 flex flex-col rounded px-1.5">
+        <div id="time-period" class="flex">
+            <div id="hour" class="time">00</div>
+            <div>:</div>
+            <div id="minute" class="time">00</div>
+            <div>:</div>
+            <div id="second" class="time">00</div>
+        </div>
+        <div id="buttons-container" class="flex ">
+            <button id="pause" class="btn bg-red-700 rounded px-0.5 text-white">Pause</button>
+            <button id="start" class="btn bg-red-700 rounded px-0.5 text-white">Start</button>
+            <button id="reset" class="btn bg-red-700 rounded px-0.5 text-white">Reset</button>
+        </div>
+    </div>
+
+</body>
+<script>
+    // /accessing buttons
+    const startBtn = document.getElementById("start")
+    const pauseBtn = document.getElementById("pause")
+    const resetBtn = document.getElementById("reset")
+
+
+    // accessing divs
+
+    const hourDIv = document.getElementById("hour")
+    const minuteDIv = document.getElementById("minute")
+    const secondDIv = document.getElementById("second")
+
+    startBtn.addEventListener("click", apoorva)
+    function apoorva() {
+        let start = setInterval(function starting() {
+            let digit = parseInt(secondDIv.textContent)
+            if (digit < 60) {
+                digit++
+                secondDIv.textContent = digit
+            }
+            else {
+                secondDIv.textContent = 0
+                let digit2 = minuteDIv.textContent
+                if (digit2 < 60) {
+                    digit2++
+                    minuteDIv.textContent = digit2
+                }
+                else {
+                    digit2 = 0
+                    let digit3 = hourDIv.textContent
+                    if (digit3 < 24) {
+                        digit3++
+                        hourDIv.textContent = digit3
+                    }
+                    else {
+                        secondDIv.textContent = 0
+                        location.reload()
+                    }
+                }
+            }
+        }
+            , 1000)
+        pauseBtn.addEventListener("click", () => {
+            clearInterval(start)
+            console.log("hi")
+        }
+        )
+    }
+    resetBtn.addEventListener("click",()=>{
+        location.reload()
+    })
+
+</script>
+
+</html>
