@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //     Humara kal ka recursive function...
+    // Iska explaination abi baki h
+
+    //     function recursive (){
+    //         let student = {
+    //             name : "apoorva",
+    //             class: "first",
+    //             gender: "female",
+    //             rollno: 101
+    //         }
+    //         console.log(student)
+    //         student.name = "rawat"
+    //         console.log(student)
+    //         recursive()
+    //     }
+    //     recursive()
+
+    // let apoorva = {
+    //     name: "apoorva",
+    //     gender: "female"
+    // }
+    // let apeksha = Object.assign({class : "first"},apoorva) 
+    // apeksha.name = "rawat"
+    // apeksha.gender = "male"
+    // apeksha.cast = "rawat"
+    // console.log(apoorva)
+    // console.log(apeksha)
+
+
+
+    
+    // function factorial2(num) {
+        //     if(og>1){
+            //         num = num * (og -1)
+            //         og --
+            //         factorial2(og)
+            //     }
+            //     else{
+                //         console.log(num,"apoorva")     
+                //     }
+                // }
+                
+    const og = prompt("hey there! Please enter your number:")
+    function morocco (num,store = 1){
+        if (num>1){
+            return morocco(num - 1,store* num)
+        }
+        else{
+            return store
+        }
+        
+    }
+    console.log(morocco(og))
+    // factorial2(num)
+    // console.log(num,"one")
+    // factorial2(num)
+    // console.log(num,'two')
+
+
+
+</script>
+
+</html>

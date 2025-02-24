@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // let lon = jon.includes(don)
+    // console.log(lon)
+    let jon = [6,7,5,9]
+    let don = [9,8,5,3]
+    let deletedone = don.filter((dony)=>{
+        return !jon.includes(dony)
+    })
+    let addedone = jon.filter((jony)=>{
+        return !don.includes(jony)
+    })
+    console.log("added",addedone," deleted ",deletedone)
+    // console.log("addeddigits",jon.filter((lon)=>{
+    //     !jonTheDon.includes(lon)
+    // }))
+    // console.log("deleteddigits",don.filter((lon)=>{
+    //     !jonTheDon.includes(lon)
+    // }))
+</script>
+</html>
