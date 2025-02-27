@@ -10,8 +10,9 @@
             box-sizing: border-box;
 
         }
-        :root{
-            --numberOfColumns:20;
+
+        :root {
+            --numberOfColumns: 20;
         }
 
         #top {
@@ -33,13 +34,14 @@
             border-radius: 5px;
             height: 25px;
         }
-        .diggy_diggy{
+
+        .diggy_diggy {
             width: 30px;
             height: 30px;
-            border: 1px gray;
-            background-color: blueviolet;
+            border: 1px black;
         }
-        #grid{
+
+        #grid {
             display: grid;
             gap: 5px;
             width: fit-content;
@@ -48,14 +50,13 @@
             padding: 20px;
             margin-top: 50px;
         }
-        
     </style>
 </head>
 
 <body>
     <div id="top">
         <label for="slider">Grid size:</label>
-        <input id="slider" type="range" min="4" max="100" value="5">
+        <input id="slider" type="range" min="4" max="30" value="5">
         <label for="colorPicker">select Color:</label>
         <input id="color-picker" type="color">
         <label for="dropdown">Mode:</label>
@@ -73,20 +74,20 @@
 <script>
     let numOfBoxes = document.getElementById("slider")
     let grid = document.getElementById("grid")
-    for (num = 0;num< (numOfBoxes.value)*numOfBoxes.value; num++){
-            let apoorva = document.createElement("div")
-            grid.append(apoorva)
-            apoorva.classList.add("diggy_diggy")
-        }
-        grid.style.gridTemplateColumns = 'repeat(5,1fr)'
-    numOfBoxes.addEventListener("input",()=>{
+    for (num = 0; num < (numOfBoxes.value) * numOfBoxes.value; num++) {
+        let apoorva = document.createElement("div")
+        grid.append(apoorva)
+        apoorva.classList.add("diggy_diggy")
+    }
+    grid.style.gridTemplateColumns = 'repeat(5,1fr)'
+    numOfBoxes.addEventListener("input", () => {
         grid.innerHTML = ""
-        for (num = 0;num<= (numOfBoxes.value)*numOfBoxes.value; num++){
+        for (num = 0; num <(numOfBoxes.value) * numOfBoxes.value; num++) {
             let apoorva = document.createElement("div")
             grid.append(apoorva)
             apoorva.classList.add("diggy_diggy")
         }
-        grid.style.gridTemplateColumns = `repeat((${numOfBoxes.value}),1fr)
+        grid.style.gridTemplateColumns = `repeat(${numOfBoxes.value},1fr)`
     })
     
 </script>
