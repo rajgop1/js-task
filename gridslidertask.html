@@ -34,8 +34,8 @@
             height: 25px;
         }
         .diggy_diggy{
-            width: 20px;
-            height: 20px;
+            width: 30px;
+            height: 30px;
             border: 1px gray;
             background-color: blueviolet;
         }
@@ -77,17 +77,16 @@
             let apoorva = document.createElement("div")
             grid.append(apoorva)
             apoorva.classList.add("diggy_diggy")
-            grid.style.gridTemplateColumns = 'repeat(5,1fr)'
         }
+        grid.style.gridTemplateColumns = 'repeat(5,1fr)'
     numOfBoxes.addEventListener("input",()=>{
         grid.innerHTML = ""
         for (num = 0;num<= (numOfBoxes.value)*numOfBoxes.value; num++){
             let apoorva = document.createElement("div")
             grid.append(apoorva)
             apoorva.classList.add("diggy_diggy")
-            grid.style.gridTemplateColumns = string(repeat((numOfBoxes.value),1fr))
         }
-        grid.style.gridTemplateColumns = numOfBoxes.value
+        grid.style.gridTemplateColumns = `repeat((${numOfBoxes.value}),1fr)
     })
     
 </script>
