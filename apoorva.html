@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Highlighter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px;
+      background-color: #f4f4f4;
+    }
+    #controls {
+      margin-bottom: 15px;
+      padding: 10px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .grid-container {
+      display: grid;
+      gap: 2px;
+      border: 2px solid #333;
+      padding: 5px;
+      background: white;
+      border-radius: 8px;
+    }
+    .grid-item {
+      width: 30px;
+      height: 30px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      transition: background 0.2s;
+    }
+    button {
+      padding: 5px 10px;
+      border: none;
+      background: #007bff;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div id="controls">
+    <label for="gridSize">Grid Size:</label>
+    <input type="range" id="gridSize" min="2" max="20" value="10">
+    
+    <label for="colorPicker">Select Color:</label>
+    <input type="color" id="colorPicker">
+    
+    <label for="mode">Mode:</label>
+    <select id="mode">
+      <option value="mouseover">Mouseover</option>
+      <option value="click">Click</option>
+      <option value="drag">Click & Drag</option>
+    </select>
+    
+    <button id="clearBtn">Clear</button>
+  </div>
+  <div id="grid" class="grid-container"></div>
+  
+  <script>
+    const grid = document.getElementById("grid");
+    const gridSize = document.getElementById("gridSize");
+    const colorPicker = document.getElementById("colorPicker");
+    const clearBtn = document.getElementById("clearBtn");
+    const modeSelect = document.getElementById("mode");
+    
+    let isMouseDown = false;
+    
+    function createGrid(size) {
+      grid.innerHTML = "";
+      grid.style.gridTemplateColumns = `repeat(${size}, 30px)`;
+      grid.style.gridTemplateRows = `repeat(${size}, 30px)`;
+      
+      for (let i = 0; i < size * size; i++) {
+        let cell = document.createElement("div");
+        cell.classList.add("grid-item");
+        
+        function changeColor() {
+          cell.style.backgroundColor = colorPicker.value;
+        }
+        
+        // For mouseover mode
+        cell.addEventListener("mouseover", () => {
+          if (modeSelect.value === "mouseover") {
+            changeColor();
+          }
+          if (modeSelect.value === "drag" && isMouseDown) {
+            changeColor();
+          }
+        });
+        
+        // For click mode
+        cell.addEventListener("click", () => {
+          if (modeSelect.value === "click") {
+            changeColor();
+          }
+        });
+        
+        // For drag mode, color the initial cell on mousedown
+        cell.addEventListener("mousedown", (e) => {
+          if (modeSelect.value === "drag") {
+            e.preventDefault(); // prevent text selection or other default behavior
+            changeColor();
+          }
+        });
+        
+        grid.appendChild(cell);
+      }
+    }
+    
+    // Global mouse/pointer events to accurately track when the mouse is released
+    document.addEventListener("mousedown", () => isMouseDown = true);
+    document.addEventListener("mouseup", () => isMouseDown = false);
+    window.addEventListener("pointerup", () => isMouseDown = false);
+    
+    // When leaving the grid container, reset isMouseDown
+    grid.addEventListener("mouseleave", () => isMouseDown = false);
+    
+    gridSize.addEventListener("input", () => createGrid(gridSize.value));
+    clearBtn.addEventListener("click", () => createGrid(gridSize.value));
+    
+    createGrid(gridSize.value);
+  </script>
+</body>
+</html>

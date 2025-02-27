@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid-slider</title>
+    <style>
+        * {
+            box-sizing: border-box;
+
+        }
+        :root{
+            --numberOfColumns:20;
+        }
+
+        #top {
+            display: flex;
+            gap: 10px;
+            margin-top: 60px;
+            margin-inline: auto;
+            width: 600px;
+            box-shadow: 0px 0px 8px 5px rgb(214, 213, 213);
+            height: 50px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #clearBtn {
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            height: 25px;
+        }
+        .diggy_diggy{
+            width: 20px;
+            height: 20px;
+            border: 1px gray;
+            background-color: blueviolet;
+        }
+        #grid{
+            display: grid;
+            gap: 5px;
+            width: fit-content;
+            margin-inline: auto;
+            box-shadow: 0 0 10px 4px gray;
+            padding: 20px;
+            margin-top: 50px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="top">
+        <label for="slider">Grid size:</label>
+        <input id="slider" type="range" min="4" max="100" value="5">
+        <label for="colorPicker">select Color:</label>
+        <input id="color-picker" type="color">
+        <label for="dropdown">Mode:</label>
+        <select id="dropdown">
+            <option value="Mouseover">Mouseover</option>
+            <option value="click">click</option>
+            <option value="click and drag">click and drag</option>
+        </select>
+        <button id="clearBtn">Clear</button>
+    </div>
+    <div id="grid">
+
+    </div>
+</body>
+<script>
+    let numOfBoxes = document.getElementById("slider")
+    let grid = document.getElementById("grid")
+    for (num = 0;num< (numOfBoxes.value)*numOfBoxes.value; num++){
+            let apoorva = document.createElement("div")
+            grid.append(apoorva)
+            apoorva.classList.add("diggy_diggy")
+            grid.style.gridTemplateColumns = 'repeat(5,1fr)'
+        }
+    numOfBoxes.addEventListener("input",()=>{
+        grid.innerHTML = ""
+        for (num = 0;num<= (numOfBoxes.value)*numOfBoxes.value; num++){
+            let apoorva = document.createElement("div")
+            grid.append(apoorva)
+            apoorva.classList.add("diggy_diggy")
+            grid.style.gridTemplateColumns = string(repeat((numOfBoxes.value),1fr))
+        }
+        grid.style.gridTemplateColumns = numOfBoxes.value
+    })
+    
+</script>
+
+</html>
