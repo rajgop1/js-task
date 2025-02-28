@@ -116,14 +116,14 @@
         if (dropdown.value === "click") {
             document.removeEventListener("mousedown", dragon)
             document.removeEventListener("mousemove", draging)
-            document.removeEventListener("mousedown", notdragging)
+            document.removeEventListener("mouseup", notdragging)
             document.removeEventListener("mouseover", action)
             document.addEventListener("click", action)
         }
         if (dropdown.value === "Mouseover") {
             document.removeEventListener("mousedown", dragon)
             document.removeEventListener("mousemove", draging)
-            document.removeEventListener("mousedown", notdragging)
+            document.removeEventListener("mouseup", notdragging)
             document.removeEventListener("click", action)
             document.addEventListener("mouseover", action)
         }
