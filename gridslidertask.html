@@ -38,7 +38,7 @@
         .diggy_diggy {
             width: 30px;
             height: 30px;
-            border: 1px black;
+            border: 1px solid black;
         }
 
         #grid {
@@ -57,7 +57,7 @@
     <div id="top">
         <label for="slider">Grid size:</label>
         <input id="slider" type="range" min="4" max="30" value="5">
-        <label for="colorPicker">select Color:</label>
+        <label for="color-picker">select Color:</label>
         <input id="color-picker" type="color">
         <label for="dropdown">Mode:</label>
         <select id="dropdown">
@@ -74,6 +74,9 @@
 <script>
     let numOfBoxes = document.getElementById("slider")
     let grid = document.getElementById("grid")
+    const dropdown = document.getElementById("dropdown")
+    let colorpicker = document.getElementById("color-picker")
+    let clear = document.getElementById("clearBtn")
     for (num = 0; num < (numOfBoxes.value) * numOfBoxes.value; num++) {
         let apoorva = document.createElement("div")
         grid.append(apoorva)
@@ -82,14 +85,66 @@
     grid.style.gridTemplateColumns = 'repeat(5,1fr)'
     numOfBoxes.addEventListener("input", () => {
         grid.innerHTML = ""
-        for (num = 0; num <(numOfBoxes.value) * numOfBoxes.value; num++) {
+        for (num = 0; num < (numOfBoxes.value) * numOfBoxes.value; num++) {
             let apoorva = document.createElement("div")
             grid.append(apoorva)
             apoorva.classList.add("diggy_diggy")
         }
         grid.style.gridTemplateColumns = `repeat(${numOfBoxes.value},1fr)`
     })
-    
+    function action(e) {
+        if (e.target.className == "diggy_diggy") {
+            e.srcElement.style.backgroundColor = `${colorpicker.value}`
+        }
+    }
+    let isDragging = false
+    function dragon() {
+        isDragging = true
+    }
+    function draging() {
+        if (isDragging) {
+            if (e.target.className == "diggy_diggy") {
+                e.srcElement.style.backgroundColor = `${colorpicker.value}`
+            }
+        }
+    }
+    function notdragging() {
+        isDragging = false
+    }
+
+    function work() {
+        if (dropdown.value === "click") {
+            document.removeEventListener("mousedown", dragon)
+            document.removeEventListener("mousemove", draging)
+            document.removeEventListener("mousedown", notdragging)
+            document.removeEventListener("mouseover", action)
+            document.addEventListener("click", action)
+        }
+        if (dropdown.value === "Mouseover") {
+            document.removeEventListener("mousedown", dragon)
+            document.removeEventListener("mousemove", draging)
+            document.removeEventListener("mousedown", notdragging)
+            document.removeEventListener("click", action)
+            document.addEventListener("mouseover", action)
+        }
+        if (dropdown.value === "click and drag") {
+            document.removeEventListener("mouseover", action)
+            document.removeEventListener("click", action)
+            document.addEventListener("mousedown", dragon)
+            document.addEventListener("mousemove", draging)
+            document.addEventListener("mousedown", notdragging)
+        }
+
+    }
+    work()
+    addEventListener("input", work)
+    clear.addEventListener("click",()=>{
+        let diggy = document.querySelectorAll(".diggy_diggy")
+        diggy.forEach((e)=>{
+            e.style.backgroundColor = null
+        })
+    })
+
 </script>
 
 </html>
