@@ -101,7 +101,7 @@
     function dragon() {
         isDragging = true
     }
-    function draging() {
+    function draging(e) {
         if (isDragging) {
             if (e.target.className == "diggy_diggy") {
                 e.srcElement.style.backgroundColor = `${colorpicker.value}`
@@ -132,7 +132,7 @@
             document.removeEventListener("click", action)
             document.addEventListener("mousedown", dragon)
             document.addEventListener("mousemove", draging)
-            document.addEventListener("mousedown", notdragging)
+            document.addEventListener("mouseup", notdragging)
         }
 
     }
