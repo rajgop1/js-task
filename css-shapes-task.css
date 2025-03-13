@@ -1,10 +1,12 @@
 body{
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: repeat(3,400px);
+    grid-template-columns: repeat(3,450px);
+    grid-template-rows: repeat(3,300px);
     justify-items: center;
     text-align: center;
 }
+
 
 
 
@@ -15,24 +17,41 @@ body{
     height: 100px;
     background-color: rgb(226, 152, 13);
 }
+#square:hover{
+    width: 150px;
+    height: 150px;
+    background-color: blue;
+}
 #rectangle{
     width: 200px;
     height: 100px;
     background-color: red;
 }
+#rectangle:hover{
+    width: 250px;
+    height: 200px;
+    background-color: rgb(45, 164, 228);
+}
+
 #circle{
     width: 100px;
     height: 100px;
     border-radius: 50%;
     background-color: rgb(166, 26, 188);
 }
+#circle:hover{
+    width: 150px;
+    height: 150px;
+}
 #oval-shape{
     width: 100px;
     height: 100px;
     border-radius: 50%;
     background-color: rgb(23, 174, 230);
-    clip-path: ellipse(40% 50% at 50% 50%);
- 
+    clip-path: ellipse(40% 50% at 50% 50%); 
+}
+#oval-shape:hover{
+    rotate: 20deg;
 }
 #triangle{
     height: 0;
@@ -41,6 +60,12 @@ body{
     border-right: 50px solid transparent;
     border-bottom: 100px solid rgb(40, 1, 195);
     /* border-top: 50px solid rgb(199, 121, 20); */
+}
+#triangle:hover{
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 200px solid yellowgreen;
+
 }
 #paralellogram, #hexagon{
     display: flex;
@@ -63,7 +88,7 @@ body{
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
     /* border-bottom: 100px solid rgb(40, 1, 195); */
-    border-top: 100px solid rgb(173, 84, 11);
+    border-top: 100px solid rgb(28, 197, 65);
     
 }
 #one{
@@ -132,28 +157,32 @@ body{
 #heart1{
     height: 0;
     width: 0;
-    border-left: 70px solid transparent;
-    border-right: 70px solid transparent;
+    border-left: 90px solid transparent;
+    border-right: 90px solid transparent;
     /* border-bottom: 100px solid rgb(40, 1, 195); */
-    border-top: 80px solid rgb(28, 197, 65);
+    border-top: 80px solid  rgb(245, 13, 13);
+    clip-path: circle(50%);
 }
 #heart2{
     position: absolute;
     bottom: 100px;
     top: -25px;
-    width: 70px;
+    width: 80px;
     height: 55px;
-    left: 1px;
+    left: 14px;
     border-radius: 50%;
-    background-color: rgb(166, 26, 188);
+    background-color: rgb(245, 13, 13);
 }
 #heart3{
     bottom: 100px;
-    left: 67px;
-    top: -27px;
+    left: 86px;
+    top: -26px;
     position: absolute;
-    width: 70px;
+    width: 80px;
     height: 55px;
     border-radius: 50%;
-    background-color: rgb(166, 26, 188);
+    background-color:rgb(245, 13, 13);
+}
+#heart:hover{
+   zoom: 150%;
 }
