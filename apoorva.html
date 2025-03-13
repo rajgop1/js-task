@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <svg width="200" height="200" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 21s-6-5.33-9-9c-2.67-3.34-2-7 2-9s7 2 7 2 3-4 7-2 4.67 5.66 2 9c-3 3.67-9 9-9 9z"
+          fill="red" stroke="black" stroke-width="1"/>
+      </svg>
+</body>
+<script>
+    const data = {
+        name: "Apoorva",
+        age: 20,
+        gender: "Female"
+    }
+    function hof(cb) {
+        return cb()
+    }
+    function fetchData() {
+       return hof(()=>{
+        return data
+       })
+    }
+    console.log(fetchData())
+
+</script>
+
+</html>
+//
+const data = {
+name: "Apoorva",
+age: 20,
+gender: "Female"
+}
+
+function hof(cb){
+return cb
+}
+
+function fetchData(){
+hof(function(){
+return data
+})
+}
+
+console.log(fetchData())
